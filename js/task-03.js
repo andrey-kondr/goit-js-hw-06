@@ -12,3 +12,42 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryEl = document.querySelector('.gallery');
+
+//  створюємо елементи списку
+const firstGalleryItem = document.createElement("li");
+firstGalleryItem.classList.add('gallery__item');
+
+const secondGalleryItem = document.createElement("li");
+secondGalleryItem.classList.add("gallery__item");
+
+const thirdGalleryItem = document.createElement("li");
+thirdGalleryItem.classList.add("gallery__item");
+
+//  створюємо зображення для елементів списку
+const firstImageEl = document.createElement("img");
+firstImageEl.src = images[0].url;
+firstImageEl.alt = images[0].alt;
+firstImageEl.classList.add("gallery__image");
+
+const secondImageEl = document.createElement("img");
+secondImageEl.src = images[1].url;
+secondImageEl.alt = images[1].alt;
+secondImageEl.classList.add("gallery__image");
+
+const thirdImageEl = document.createElement("img");
+thirdImageEl.src = images[2].url;
+thirdImageEl.alt = images[2].alt;
+thirdImageEl.classList.add("gallery__image");
+
+// додаємо зображення до елементів списку 
+firstGalleryItem.appendChild(firstImageEl);
+
+secondGalleryItem.appendChild(secondImageEl);
+
+thirdGalleryItem.appendChild(thirdImageEl);
+
+//  додаємо еелменти списку до списку і виводимо в консоль
+galleryEl.append(firstGalleryItem, secondGalleryItem, thirdGalleryItem);
+console.log(galleryEl);
