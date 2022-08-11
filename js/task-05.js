@@ -2,13 +2,15 @@ const nameInputEl = document.querySelector("#name-input");
 
 const nameOutputEl = document.querySelector("#name-output");
 
-const typeName = (event) => {
-    if (event.currentTarget.value === 0) {
-        return nameOutputEl.textContent;
-    }
-      nameOutputEl.textContent = event.currentTarget.value;
-}
+const textInput = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
 
-const currentNameEl = nameInputEl.addEventListener("input", typeName);
+textInput.addEventListener("input", (event) => {
+  output.textContent = event.target.value;
+
+  if (event.target.value === "") {
+    output.textContent = "Anonymous";
+  }
+});
 
 
